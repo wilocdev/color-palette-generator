@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CopyIcon } from './icons/Copy'
-import { ReloadIcon } from './icons/Reload'
+import { CopyIcon, ReloadIcon } from './icons'
 
 interface Props {
   hex: string

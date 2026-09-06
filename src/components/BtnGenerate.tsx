@@ -1,4 +1,4 @@
-import { ReloadIcon } from './icons/Reload'
+import { ReloadIcon } from './icons'
 
 interface Props {
   loading: boolean
