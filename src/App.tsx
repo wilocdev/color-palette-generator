@@ -1,5 +1,5 @@
 import {
-  BentoResponsive,
+  BentoLayout,
   CardProcessCompleted,
   CardShowIcons,
   ColorUsage,
@@ -13,11 +13,11 @@ function App() {
   return (
     <div style={paletteStyles} className="p-4">
       <Hero palette={palette} loading={loading} generate={generate} />
-      <BentoResponsive>
+      <BentoLayout>
         <ColorUsage />
         <CardShowIcons />
         <CardProcessCompleted />
-      </BentoResponsive>
+      </BentoLayout>
     </div>
   )
 }

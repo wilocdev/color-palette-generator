@@ -1,4 +1,4 @@
-export * from './BentoResponsive'
+export * from './BentoLayout'
 export * from './BtnGenerate'
 export * from './CardProcessCompleted'
 export * from './CardShowIcons'
