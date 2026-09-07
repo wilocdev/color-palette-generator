@@ -28,3 +28,16 @@
   border-right: 7px solid transparent;
   border-top: 9px solid var(--color-accent);
 }
+
+.rounded-custom-r {
+  border-radius: 200px 999px 999px 200px;
+}
+
+.rounded-custom-l {
+  border-radius: 999px 200px 200px 999px;
+}
+
+body {
+  background-color: #fbfbfb;
+  background-repeat: repeat;
+}
