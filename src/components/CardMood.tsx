@@ -9,7 +9,9 @@ export function CardMood() {
           <UserIcon />
         </span>
       </div>
-      <p className="text-3xl font-medium">How are you feeling now?</p>
+      <p className="text-xl sm:text-3xl font-medium">
+        How are you feeling now?
+      </p>
       <button className="bg-primary/60 py-2 rounded-2xl">Log Mood</button>
     </div>
   )

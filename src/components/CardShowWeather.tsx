@@ -6,8 +6,8 @@ export function CardShowWeather() {
       <div className="flex items-center text-lg gap-2">
         <SunIcon /> Clear Sky
       </div>
-      <p className="text-8xl">24°</p>
-      <p className="text-3xl">Tokyo, Japan</p>
+      <p className="text-7xl sm:text-8xl">24°</p>
+      <p className="text-xl sm:text-3xl">Tokyo, Japan</p>
     </div>
   )
 }
