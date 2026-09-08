@@ -10,6 +10,7 @@ import {
   CardTimer,
   CardWatchCasio,
   ColorUsage,
+  Footer,
   Hero
 } from './components'
 import { usePaletteGenerator } from './hooks/usePaletteGenerator'
@@ -32,6 +33,7 @@ function App() {
         <CardProfile />
         <CardCoffe />
       </BentoLayout>
+      <Footer />
     </div>
   )
 }
