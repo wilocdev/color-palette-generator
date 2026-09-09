@@ -1,9 +1,13 @@
-export function CircleCheckIcon() {
+interface Props {
+  size?: number
+}
+
+export function CircleCheckIcon({ size = 60 }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={60}
-      height={60}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="currentColor"
       className="icon icon-tabler icons-tabler-filled icon-tabler-circle-check"
