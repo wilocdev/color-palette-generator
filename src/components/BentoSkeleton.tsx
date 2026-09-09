@@ -1,15 +1,7 @@
 const CARD_SHAPES: { cols: 1 | 2; rows: 1 | 2 }[] = [
-  { cols: 2, rows: 1 }, // CardColorUsage
-  { cols: 1, rows: 1 }, // CardShowIcons
-  { cols: 1, rows: 1 }, // CardProcessCompleted
-  { cols: 1, rows: 1 }, // CardButton
-  { cols: 1, rows: 1 }, // CardShowWeather
-  { cols: 2, rows: 2 }, // CardWatchCasio
-  { cols: 2, rows: 1 }, // CardTimer
-  { cols: 1, rows: 1 }, // CardMood
-  { cols: 1, rows: 1 }, // CardProfile
-  { cols: 1, rows: 1 }, // CardCoffe
+  { cols: 1, rows: 1 }, // CardTodo
   { cols: 2, rows: 1 }, // CardPricing
+  { cols: 1, rows: 1 }, // CardShowWeather
   { cols: 2, rows: 1 }, // CardSignup
   { cols: 2, rows: 1 }, // CardNavbar
   { cols: 2, rows: 1 }, // CardKanban
