@@ -2,7 +2,7 @@ import { GithubIcon } from './icons'
 
 export function Footer() {
   return (
-    <footer className="mt-6 flex items-center justify-center gap-2 border-t border-black/10 pt-4 text-sm text-accent">
+    <footer className="mt-16 flex items-center justify-center gap-2 border-t border-black/10 pt-4 text-sm text-accent">
       <span>Wilson Ochoa</span>
       <a
         href="https://github.com/wilocdev/color-palette-generator"
