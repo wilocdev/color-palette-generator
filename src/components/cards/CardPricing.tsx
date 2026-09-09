@@ -1,11 +1,9 @@
 export function CardPricing() {
   return (
     <div className="col-span-2 h-60 flex gap-4 p-4 bg-background shadow-lg rounded-lg">
-      <div className="flex-1 flex flex-col gap-2 p-3 rounded-lg border border-accent/30">
-        <p className="text-xs font-medium text-accent uppercase tracking-wide">
-          Free
-        </p>
-        <p className="text-2xl font-bold text-accent">$0</p>
+      <div className="flex-1 flex flex-col gap-2 p-3 rounded-lg border border-accent/30 text-accent">
+        <p className="text-xs font-medium  uppercase tracking-wide">Free</p>
+        <p className="text-2xl font-bold ">$0</p>
         <p className="text-xs opacity-70">3 palettes / day</p>
         <p className="text-xs opacity-70">Basic export</p>
         <div className="mt-auto bg-primary rounded-lg py-1.5 text-center text-xs font-medium text-background">
