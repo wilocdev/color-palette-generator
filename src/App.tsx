@@ -1,38 +1,21 @@
-import {
-  BentoLayout,
-  CardButton,
-  CardCoffe,
-  CardMood,
-  CardProcessCompleted,
-  CardProfile,
-  CardShowIcons,
-  CardShowWeather,
-  CardTimer,
-  CardWatchCasio,
-  ColorUsage,
-  Footer,
-  Hero
-} from './components'
+import { Footer } from './components/Footer'
+import { Hero } from './components/Hero'
+import { LazyBentoSection } from './AppLazy'
 import { usePaletteGenerator } from './hooks/usePaletteGenerator'
 
 function App() {
-  const { palette, loading, generate, paletteStyles } = usePaletteGenerator()
+  const { palette, loading, error, generate, paletteStyles } =
+    usePaletteGenerator()
 
   return (
     <div style={paletteStyles} className="p-4 mb-6">
-      <Hero palette={palette} loading={loading} generate={generate} />
-      <BentoLayout>
-        <ColorUsage />
-        <CardShowIcons />
-        <CardProcessCompleted />
-        <CardButton />
-        <CardShowWeather />
-        <CardWatchCasio />
-        <CardTimer />
-        <CardMood />
-        <CardProfile />
-        <CardCoffe />
-      </BentoLayout>
+      <Hero
+        palette={palette}
+        loading={loading}
+        error={error}
+        generate={generate}
+      />
+      <LazyBentoSection />
       <Footer />
     </div>
   )

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { CopyIcon, ReloadIcon } from './icons'
 
 interface Props {
@@ -10,6 +10,7 @@ interface Props {
 
 export function ColorSwatch({ hex, bg, accent, loading }: Props) {
   const [copied, setCopied] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const handleCopy = async () => {
     if (loading) return
@@ -17,11 +18,18 @@ export function ColorSwatch({ hex, bg, accent, loading }: Props) {
     await navigator.clipboard.writeText(hex)
 
     setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    timerRef.current = setTimeout(() => setCopied(false), 2000)
   }
 
   useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
+  }, [])
+
+  useEffect(() => {
     if (loading) {
+      if (timerRef.current) clearTimeout(timerRef.current)
       setCopied(false)
     }
   }, [loading])
@@ -33,6 +41,7 @@ export function ColorSwatch({ hex, bg, accent, loading }: Props) {
       <p className="font-bold">{hex}</p>
       <button
         onClick={handleCopy}
+        aria-label={copied ? 'Copied' : 'Copy to clipboard'}
         disabled={copied || loading}
         className={`cursor-pointer rounded-full p-2 transition-colors ${
           loading || copied
@@ -43,9 +52,9 @@ export function ColorSwatch({ hex, bg, accent, loading }: Props) {
         }`}
       >
         {copied ? (
-          <div id="animationReload">
+          <span className="animate-spin inline-flex">
             <ReloadIcon />
-          </div>
+          </span>
         ) : (
           <CopyIcon />
         )}

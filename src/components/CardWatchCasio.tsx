@@ -11,8 +11,11 @@ export function CardWatchCasio() {
       </header>
       <img
         className="w-80 object-cover mx-auto"
-        src="https://atumano.com.co/wp-content/uploads/2025/05/A168WA-5AY.png"
-        alt="reloj image"
+        src="./watch-casio-resize.webp"
+        alt="Casio Vintage Watch A168WA"
+        width="320"
+        height="320"
+        loading="lazy"
       />
       <p className="text-background text-xl font-medium text-center">
         Casio Vintage Watch (A168WA-5AYDF)

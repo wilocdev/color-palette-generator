@@ -6,12 +6,12 @@ export function CardTimer() {
       <div className="flex flex-col justify-center ml-6 font-medium">
         <p className="opacity-70">Timer</p>
         <p className="text-5xl">16:15</p>
-        <button className="mt-4 bg-primary py-2 px-10 rounded-xl">Stop</button>
+        <div className="mt-4 bg-primary py-2 px-10 rounded-xl">Stop</div>
       </div>
       <aside className="h-full w-full rounded-xl bg-secondary flex items-center justify-center gap-6">
-        <button className="bg-accent rounded-full p-4">
+        <div className="bg-accent rounded-full p-4">
           <PauseIcon />
-        </button>
+        </div>
       </aside>
     </div>
   )

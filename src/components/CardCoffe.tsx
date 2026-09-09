@@ -6,8 +6,11 @@ export function CardCoffe() {
       <div className="flex gap-2 w-full font-medium ">
         <img
           className="w-20 h-20 rounded-xl"
-          src="https://i.pinimg.com/1200x/c0/46/2a/c0462aba87c717ea044e5dccacf0f80d.jpg"
-          alt=""
+          src="./caffe.webp"
+          alt="Cafe Latte"
+          width="80"
+          height="80"
+          loading="lazy"
         />
         <div>
           <h2>Cafe Latte</h2>
@@ -16,16 +19,16 @@ export function CardCoffe() {
         </div>
       </div>
       <footer className="flex gap-2 xl:flex-col ">
-        <button className="rounded-full py-2 w-36 border-2 border-background/40">
+        <div className="rounded-full py-2 w-36 border-2 border-background/40 text-center">
           3 Shots
-        </button>
+        </div>
         <div className="flex gap-2">
-          <button className="bg-background/60 py-2 px-8 rounded-custom-l">
+          <div className="bg-background/60 py-2 px-8 rounded-custom-l">
             <MinusIco />
-          </button>
-          <button className="bg-background/60  py-2 px-8 rounded-custom-r">
+          </div>
+          <div className="bg-background/60  py-2 px-8 rounded-custom-r">
             <PlusIcon />
-          </button>
+          </div>
         </div>
       </footer>
     </div>
