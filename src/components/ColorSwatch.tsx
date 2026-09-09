@@ -1,14 +1,23 @@
 import { useEffect, useRef, useState } from 'react'
-import { CopyIcon, ReloadIcon } from './icons'
+import { CircleCheckIcon, CopyIcon, LockIcon, UnlockIcon } from './icons'
 
 interface Props {
   hex: string
   bg: string
   accent: string
   loading: boolean
+  locked: boolean
+  onToggleLock: () => void
 }
 
-export function ColorSwatch({ hex, bg, accent, loading }: Props) {
+export function ColorSwatch({
+  hex,
+  bg,
+  accent,
+  loading,
+  locked,
+  onToggleLock
+}: Props) {
   const [copied, setCopied] = useState(false)
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -36,28 +45,38 @@ export function ColorSwatch({ hex, bg, accent, loading }: Props) {
 
   return (
     <div
-      className={`shadow-lg p-4 w-70 rounded-2xl flex items-center justify-between ${bg} ${accent}`}
+      className={`animate-scale-in shadow-lg p-4 w-72 rounded-2xl flex items-center justify-between ${bg} ${accent}`}
     >
-      <p className="font-bold">{hex}</p>
+      <div className="flex items-center gap-2.5">
+        <button
+          onClick={onToggleLock}
+          aria-label={locked ? 'Unlock color' : 'Lock color'}
+          disabled={loading}
+          className={`cursor-pointer rounded-full transition-opacity ${
+            loading
+              ? 'cursor-not-allowed opacity-30'
+              : 'opacity-50 hover:opacity-100'
+          } ${locked ? 'opacity-100' : ''}`}
+        >
+          {locked ? <LockIcon size={18} /> : <UnlockIcon size={18} />}
+        </button>
+        <p className="font-bold text-lg">{hex}</p>
+      </div>
       <button
         onClick={handleCopy}
         aria-label={copied ? 'Copied' : 'Copy to clipboard'}
         disabled={copied || loading}
         className={`cursor-pointer rounded-full p-2 transition-colors ${
-          loading || copied
-            ? 'cursor-not-allowed opacity-50'
-            : bg === 'bg-background'
-              ? 'hover:bg-accent hover:text-background'
-              : 'hover:text-accent hover:bg-background'
+          copied
+            ? 'text-green-600'
+            : loading
+              ? 'cursor-not-allowed opacity-50'
+              : bg === 'bg-background'
+                ? 'hover:bg-accent hover:text-background'
+                : 'hover:text-accent hover:bg-background'
         }`}
       >
-        {copied ? (
-          <span className="animate-spin inline-flex">
-            <ReloadIcon />
-          </span>
-        ) : (
-          <CopyIcon />
-        )}
+        {copied ? <CircleCheckIcon size={20} /> : <CopyIcon />}
       </button>
     </div>
   )
