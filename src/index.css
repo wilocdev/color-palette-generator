@@ -6,16 +6,6 @@
   --color-accent: #000000;
   --color-background: #ffffff;
 }
-#animationReload {
-  animation: reload 1s ease infinite;
-}
-
-@keyframes reload {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .triangulo-abajo::before {
   content: '';
   position: absolute;
