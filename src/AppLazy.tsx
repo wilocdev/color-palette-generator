@@ -4,48 +4,78 @@ import { BentoSkeleton } from './components/BentoSkeleton'
 const BentoLayout = lazy(() =>
   import('./components/BentoLayout').then(m => ({ default: m.BentoLayout }))
 )
-const ColorUsage = lazy(() =>
-  import('./components/ColorUsage').then(m => ({ default: m.ColorUsage }))
+const CardColorUsage = lazy(() =>
+  import('./components/cards/CardColorUsage').then(m => ({
+    default: m.CardColorUsage
+  }))
 )
 const CardShowIcons = lazy(() =>
-  import('./components/CardShowIcons').then(m => ({ default: m.CardShowIcons }))
+  import('./components/cards/CardShowIcons').then(m => ({
+    default: m.CardShowIcons
+  }))
 )
 const CardProcessCompleted = lazy(() =>
-  import('./components/CardProcessCompleted').then(m => ({
+  import('./components/cards/CardProcessCompleted').then(m => ({
     default: m.CardProcessCompleted
   }))
 )
 const CardButton = lazy(() =>
-  import('./components/CardButtons').then(m => ({ default: m.CardButton }))
+  import('./components/cards/CardButtons').then(m => ({
+    default: m.CardButton
+  }))
 )
 const CardShowWeather = lazy(() =>
-  import('./components/CardShowWeather').then(m => ({
+  import('./components/cards/CardShowWeather').then(m => ({
     default: m.CardShowWeather
   }))
 )
 const CardWatchCasio = lazy(() =>
-  import('./components/CardWatchCasio').then(m => ({
+  import('./components/cards/CardWatchCasio').then(m => ({
     default: m.CardWatchCasio
   }))
 )
 const CardTimer = lazy(() =>
-  import('./components/CardTimer').then(m => ({ default: m.CardTimer }))
+  import('./components/cards/CardTimer').then(m => ({ default: m.CardTimer }))
 )
 const CardMood = lazy(() =>
-  import('./components/CardMood').then(m => ({ default: m.CardMood }))
+  import('./components/cards/CardMood').then(m => ({ default: m.CardMood }))
 )
 const CardProfile = lazy(() =>
-  import('./components/CardProfile').then(m => ({ default: m.CardProfile }))
+  import('./components/cards/CardProfile').then(m => ({
+    default: m.CardProfile
+  }))
 )
 const CardCoffe = lazy(() =>
-  import('./components/CardCoffe').then(m => ({ default: m.CardCoffe }))
+  import('./components/cards/CardCoffe').then(m => ({ default: m.CardCoffe }))
+)
+const CardPricing = lazy(() =>
+  import('./components/cards/CardPricing').then(m => ({
+    default: m.CardPricing
+  }))
+)
+const CardSignup = lazy(() =>
+  import('./components/cards/CardSignup').then(m => ({ default: m.CardSignup }))
+)
+const CardNavbar = lazy(() =>
+  import('./components/cards/CardNavbar').then(m => ({ default: m.CardNavbar }))
+)
+const CardKanban = lazy(() =>
+  import('./components/cards/CardKanban').then(m => ({ default: m.CardKanban }))
+)
+const CardChat = lazy(() =>
+  import('./components/cards/CardChat').then(m => ({ default: m.CardChat }))
+)
+const CardNotifications = lazy(() =>
+  import('./components/cards/CardNotifications').then(m => ({
+    default: m.CardNotifications
+  }))
 )
 
 export function LazyBentoSection() {
   return (
     <Suspense fallback={<BentoSkeleton />}>
       <BentoLayout>
-        <ColorUsage />
+        <CardColorUsage />
         <CardShowIcons />
         <CardProcessCompleted />
         <CardButton />
@@ -55,6 +85,12 @@ export function LazyBentoSection() {
         <CardMood />
         <CardProfile />
         <CardCoffe />
+        <CardPricing />
+        <CardSignup />
+        <CardNavbar />
+        <CardKanban />
+        <CardChat />
+        <CardNotifications />
       </BentoLayout>
     </Suspense>
   )
