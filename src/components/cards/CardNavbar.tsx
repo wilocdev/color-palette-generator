@@ -12,7 +12,7 @@ export function CardNavbar() {
           </span>
         </nav>
       </div>
-      <div className="flex-1 flex flex-col items-center justify-center gap-2 bg-secondary p-4">
+      <div className="flex-1 flex flex-col items-center justify-center gap-2 bg-secondary p-4 text-accent">
         <p className="text-xl font-medium">Build stunning palettes</p>
         <p className="text-xs opacity-70 text-center">
           AI-generated color schemes for your next project.
