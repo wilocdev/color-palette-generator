@@ -1,8 +1,8 @@
 # Palette Lab
 
-Color palette generator powered by the [Huemint](https://huemint.com) AI transformer API. Generates 4-color palettes and previews them instantly across a bento grid of real UI components — buttons, chat, kanban, pricing, forms, and more.
+Color palette generator AI. Generates 4-color palettes and previews them instantly across a bento grid of real UI components — buttons, chat, kanban, pricing, forms, and more.
 
-![Color palette generator](docs/show_page.webp)
+![Color palette generator](./docs/show_page.webp)
 
 ## Features
 
@@ -28,11 +28,11 @@ pnpm dev
 
 ## Scripts
 
-| Command      | Description                 |
-| ------------ | --------------------------- |
-| `pnpm dev`   | Start the dev server        |
-| `pnpm build` | Typecheck + production build |
-| `pnpm lint`  | Run oxlint                  |
+| Command        | Description                  |
+| -------------- | ---------------------------- |
+| `pnpm dev`     | Start the dev server         |
+| `pnpm build`   | Typecheck + production build |
+| `pnpm lint`    | Run oxlint                   |
 | `pnpm preview` | Preview the production build |
 
 ## How it works
