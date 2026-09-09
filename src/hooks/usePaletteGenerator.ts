@@ -25,6 +25,13 @@ export const usePaletteGenerator = () => {
   const [palette, setPalette] = useState<string[] | null>(loadCachedPalette)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [lockedColors, setLockedColors] = useState<(string | null)[]>([
+    null,
+    null,
+    null,
+    null
+  ])
+  const [temperature, setTemperature] = useState(1.2)
   const abortRef = useRef<AbortController | null>(null)
 
   const generate = useCallback(async () => {
@@ -36,7 +43,12 @@ export const usePaletteGenerator = () => {
     setError(null)
 
     try {
-      const results = await generatePalette(controller.signal)
+      const paletteSpec = lockedColors.map(c => c ?? '-')
+      const results = await generatePalette({
+        lockedColors: paletteSpec,
+        temperature,
+        signal: controller.signal
+      })
       setPalette(results[0].palette)
       saveCachedPalette(results[0].palette)
     } catch (err) {
@@ -45,7 +57,19 @@ export const usePaletteGenerator = () => {
     } finally {
       if (abortRef.current === controller) setLoading(false)
     }
-  }, [])
+  }, [lockedColors, temperature])
+
+  const toggleLock = useCallback(
+    (index: number) => {
+      setLockedColors(prev => {
+        const next = [...prev]
+        const current = next[index]
+        next[index] = current === null && palette ? palette[index] : null
+        return next
+      })
+    },
+    [palette]
+  )
 
   useEffect(() => {
     if (!palette) {
@@ -72,6 +96,10 @@ export const usePaletteGenerator = () => {
     loading,
     error,
     generate,
-    paletteStyles
+    paletteStyles,
+    lockedColors,
+    temperature,
+    toggleLock,
+    setTemperature
   }
 }
