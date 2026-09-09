@@ -24,13 +24,29 @@ const generationSpecifications = {
   palette: ['-', '-', '-', '-']
 }
 
-export const generatePalette = async (signal?: AbortSignal) => {
+interface GeneratePaletteOptions {
+  lockedColors?: (string | '-')[]
+  temperature?: number
+  signal?: AbortSignal
+}
+
+export const generatePalette = async (options: GeneratePaletteOptions = {}) => {
+  const {
+    lockedColors = ['-', '-', '-', '-'],
+    temperature = 1.2,
+    signal
+  } = options
+
   const response = await fetch('https://api.huemint.com/color', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(generationSpecifications),
+    body: JSON.stringify({
+      ...generationSpecifications,
+      temperature,
+      palette: lockedColors
+    }),
     signal
   })
   if (!response.ok) throw new Error('Ocurrio un error al llamar la api')
