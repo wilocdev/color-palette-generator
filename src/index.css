@@ -69,3 +69,20 @@ body {
 .animate-scale-in {
   animation: scaleIn 0.35s ease-out forwards;
 }
+
+@keyframes equalizer {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.eq-bar {
+  transform-origin: bottom;
+  width: 4px;
+  border-radius: 999px;
+  animation: equalizer 1.1s ease-in-out infinite;
+}
