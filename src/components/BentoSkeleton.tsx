@@ -1,23 +1,23 @@
-const CARD_SHAPES: { cols: 1 | 2; rows: 1 | 2 }[] = [
-  { cols: 1, rows: 1 }, // CardTodo
-  { cols: 2, rows: 1 }, // CardPricing
-  { cols: 1, rows: 1 }, // CardShowWeather
-  { cols: 2, rows: 1 }, // CardSignup
-  { cols: 2, rows: 1 }, // CardNavbar
-  { cols: 2, rows: 1 }, // CardKanban
-  { cols: 2, rows: 1 }, // CardChat
-  { cols: 1, rows: 1 } // CardNotifications
+const CARD_SHAPES: string[] = [
+  'col-span-2 xl:col-span-3', // CardMusicPlayer
+  'col-span-2', // CardPricing
+  'col-span-2 xl:col-span-3', // CardNews
+  'col-span-2', // CardSignup
+  'col-span-2 xl:col-span-3', // CardChat
+  'col-span-1', // CardShowWeather
+  'col-span-2 md:col-span-1', // CardTodo
+  'col-span-2', // CardNavbar
+  'col-span-2 md:col-span-1 xl:col-span-2', // CardKanban
+  'col-span-1 md:col-span-2 xl:col-span-1' // CardNotifications
 ]
 
 export function BentoSkeleton() {
   return (
     <section className="mx-auto mt-20 max-w-292.5 grid grid-cols-2 md:grid-cols-4 gap-4 xl:grid-cols-5">
-      {CARD_SHAPES.map((shape, i) => (
+      {CARD_SHAPES.map((className, i) => (
         <div
           key={i}
-          className={`animate-pulse rounded-lg bg-neutral-200 ${
-            shape.rows === 2 ? 'h-124' : 'h-60'
-          } ${shape.cols === 2 ? 'col-span-2' : ''}`}
+          className={`animate-pulse rounded-lg bg-neutral-200 h-60 ${className}`}
         />
       ))}
     </section>
