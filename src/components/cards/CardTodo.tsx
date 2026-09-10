@@ -1,6 +1,6 @@
 export function CardTodo() {
   return (
-    <div className="h-60 flex flex-col justify-between gap-3 bg-background text-accent shadow-lg rounded-lg px-2 py-4">
+    <div className=" h-60 flex flex-col justify-between gap-3 bg-background text-accent shadow-lg rounded-lg px-2 py-4">
       <header className="px-2">
         <span className="font-medium text-xl">Today´s To Do</span>
         <span className="text-sm opacity-70 block">September 09</span>

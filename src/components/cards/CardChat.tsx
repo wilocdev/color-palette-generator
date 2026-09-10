@@ -1,6 +1,6 @@
 export function CardChat() {
   return (
-    <div className="col-span-2 h-60 flex flex-col gap-2 bg-background text-accent shadow-lg rounded-lg p-4">
+    <div className="col-span-2 xl:col-span-3 h-60 flex flex-col gap-2 bg-background text-accent shadow-lg rounded-lg p-4">
       <p className="text-xs font-medium uppercase tracking-wide opacity-70">
         Team chat
       </p>

@@ -12,7 +12,7 @@ export function CardNotifications() {
   const items = initialItems.filter((_, i) => !dismissed[i])
 
   return (
-    <div className="col-span-1 h-60 flex flex-col justify-between bg-background text-accent shadow-lg rounded-lg p-4">
+    <div className="md:col-span-2 xl:col-span-1 h-60 flex flex-col justify-between bg-background text-accent shadow-lg rounded-lg p-4">
       <div className="flex items-center justify-between">
         <span className="text-sm font-medium">Notifications</span>
         <span className="text-[10px] rounded-full bg-accent text-background px-1.5 py-0.5 font-bold">
