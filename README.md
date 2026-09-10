@@ -1,13 +1,13 @@
 # Palette Lab
 
-Color palette generator AI. Generates 4-color palettes and previews them instantly across a bento grid of real UI components — buttons, chat, kanban, pricing, forms, and more.
+Color palette generator AI. Generates 4-color palettes and previews them instantly across a bento grid of real UI components — buttons, chat, kanban, pricing, forms, music player, news cards, and more.
 
 ![Color palette generator](./docs/show_page.webp)
 
 ## Features
 
 - AI-powered 4-color palettes via the Huemint API
-- Live preview across 16 themed UI components
+- Live preview across 10 themed UI components
 - Lock individual colors and regenerate the rest
 - Cold / Warm temperature control
 - WCAG contrast checker (AAA / AA / AA Large)
