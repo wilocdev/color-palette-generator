@@ -34,18 +34,28 @@ const CardNotifications = lazy(() =>
     default: m.CardNotifications
   }))
 )
+const CardMusicPlayer = lazy(() =>
+  import('./components/cards/CardMusicPlayer').then(m => ({
+    default: m.CardMusicPlayer
+  }))
+)
+const CardNews = lazy(() =>
+  import('./components/cards/CardNews').then(m => ({ default: m.CardNews }))
+)
 
 export function LazyBentoSection() {
   return (
     <Suspense fallback={<BentoSkeleton />}>
       <BentoLayout>
-        <CardTodo />
+        <CardMusicPlayer />
         <CardPricing />
-        <CardShowWeather />
+        <CardNews />
         <CardSignup />
+        <CardChat />
+        <CardShowWeather />
+        <CardTodo />
         <CardNavbar />
         <CardKanban />
-        <CardChat />
         <CardNotifications />
       </BentoLayout>
     </Suspense>
